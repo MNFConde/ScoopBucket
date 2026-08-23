@@ -17,20 +17,22 @@ jobs:
         shell: powershell
     steps:
       - name: Checkout Bucket
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Need at least 2 commits to properly gather changed files for linting
           fetch-depth: 2
           path: 'my_bucket'
       - name: Checkout Scoop
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ScoopInstaller/Scoop
           path: 'scoop_core'
       - name: Install and cache test dependencies
         uses: potatoqualitee/psmodulecache@v6.3
         with:
-          modules-to-cache: BuildHelpers, Pester
+          # Pin Pester 5.x: Pester 6 makes empty -TestCases a discovery error
+          # (see ScoopInstaller/Scoop#6713, ScoopInstaller/Scoop#6693)
+          modules-to-cache: BuildHelpers, Pester:5.7.1
           shell: powershell
       - name: Run tests
         run: |

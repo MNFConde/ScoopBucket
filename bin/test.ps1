@@ -12,4 +12,6 @@ $pesterConfig = New-PesterConfiguration -Hashtable @{
     }
 }
 $result = Invoke-Pester -Configuration $pesterConfig
-exit $result.FailedCount
+# Include container/block failures (e.g. Pester discovery errors) in the exit code,
+# otherwise the job shows green even when the whole test container failed.
+exit ($result.FailedCount + $result.FailedBlocksCount + $result.FailedContainersCount)
