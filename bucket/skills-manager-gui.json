@@ -9,7 +9,12 @@
             "hash": "64a15766ddb230bb31740aa9526bfa6a0880fac7069a7b956bf44fc55ddf2e20"
         }
     },
-    "bin": "skills-manager.exe",
+    "installer": {
+        "args": [
+            "/S",
+            "/D=$dir"
+        ]
+    },
     "shortcuts": [
         [
             "skills-manager.exe",
