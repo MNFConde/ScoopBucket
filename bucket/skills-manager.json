@@ -1,12 +1,12 @@
 {
-    "version": "1.42.0",
+    "version": "1.42.1",
     "description": "Skills Manager CLI - manage AI agent skills",
     "homepage": "https://github.com/xingkongliang/skills-manager",
     "license": "Unknown",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/xingkongliang/skills-manager/releases/download/v1.42.0/skills-manager-cli-Windows-x64.exe#/skills-manager.exe",
-            "hash": "92787100bf73d1b95d26b1d406cdc89b1cda8b4e73aa07cb36f176fd7a2c749c"
+            "url": "https://github.com/xingkongliang/skills-manager/releases/download/v1.42.1/skills-manager-cli-Windows-x64.exe#/skills-manager.exe",
+            "hash": "8af49271bc04e41306a728b082b77f2272e99228cbaa9a29ca34d293fc9ec187"
         }
     },
     "bin": [
